@@ -15,7 +15,7 @@ export default function about({data}) {
             <div style={{
                 minHeight: '100vh',
             }}>
-                <h1>About</h1>
+                <h1>About PRPRPR22</h1>
                 <p>{name}</p>
             </div>
         </>
