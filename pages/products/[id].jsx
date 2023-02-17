@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-export default function aboutId({ data }) {
+export default function ProductsId({ data }) {
+  /* 리액트 컴포넌트 함수는 파스칼 케이스 대문자로 시작 */
   const router = useRouter();
   const { id } = router.query;
   const { name } = data;
