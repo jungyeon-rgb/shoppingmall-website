@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./productItem.modules.css";
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './productItem.module.css';
 
 function ProductItem(props) {
   const { title, image, price } = props.post;
