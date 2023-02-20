@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import sytles from "./products/product-item.module.css";
 
 function ProductItem(props) {
   const { title, image, price } = props.post;
