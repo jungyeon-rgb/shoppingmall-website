@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: false,
   compiler: {
     emotion: true,
+  },
+  images: {
+    domains: ['picsum.photos']
   }
 };
 
