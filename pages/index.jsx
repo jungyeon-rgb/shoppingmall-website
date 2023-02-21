@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <main>
         <div className={styles.logInNav}>이경은님/로그아웃</div>
-        <Head>
+        {/* <Head>
           <div className={styles.head}>문구판매 사이트입니당근!</div>
-        </Head>
+        </Head> */}
         <article>
           <div
             className={styles.menuNav}
