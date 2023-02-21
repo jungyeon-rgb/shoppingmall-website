@@ -1,9 +1,10 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const StyledProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  max-width: 1080+;
 `;
 
 export const StyledProductAnchor = styled.a`
@@ -35,8 +36,8 @@ export const StyledProductTitle = styled.h3`
 `;
 
 export const StyledProductPrice = styled.p`
-    font-size: 14px;
-    margin: 8px 0 0 0;
-    padding: 0;
-    text-decoration: none;
+  font-size: 14px;
+  margin: 8px 0 0 0;
+  padding: 0;
+  text-decoration: none;
 `;

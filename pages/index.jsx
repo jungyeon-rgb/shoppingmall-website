@@ -20,6 +20,7 @@ export default function Home(props) {
             <img src="/img/item01.png" alt="item" className={styles.itemImg} />
           </div>
           <div className={styles.event}>
+            <a href="/order">주문페이지 바로가기</a>
             <p>2.13(월) ~ 2.26(일)</p>
             <p>새로운 학기의 시작</p>
             <p>
