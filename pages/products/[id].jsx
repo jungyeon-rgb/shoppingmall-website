@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import ProductsGrid from "../../components/products/products-grid";
 
 export default function ProductsId({ data }) {
   /* 리액트 컴포넌트 함수는 파스칼 케이스 대문자로 시작 */
@@ -24,6 +25,7 @@ export default function ProductsId({ data }) {
         <h1>Products</h1>
         <p>{name}</p>
         <p>{title}</p>
+        <ProductsGrid posts={props.posts} />
       </div>
     </>
   );
@@ -33,7 +35,31 @@ export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch("http://localhost:3000/api/hello");
   const data = await res.json();
+  // 임시 데이터로 대체
+  const post = [
+    {
+      title: "Product 1",
+      image: "https://picsum.photos/500",
+      price: 1000,
+      slug: "product-1",
+    },
+    {
+      title: "Product 2",
+      image: "https://picsum.photos/500",
+      price: 2000,
+      slug: "product-2",
+    },
+    {
+      title: "Product 3",
+      image: "https://picsum.photos/500",
+      price: 3000,
+      slug: "product-3",
+    },
+  ];
 
-  // Pass data to the page via props
-  return { props: { data } };
+  return {
+    props: {
+      data,
+    },
+  };
 }
