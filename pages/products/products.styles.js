@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const StyledProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  max-width: 1080+;
+  max-width: 1080px;
 `;
 
 export const StyledProductAnchor = styled.a`

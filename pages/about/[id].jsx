@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-export default function aboutId({ data }) {
+export default function AboutId({ data }) {
   const router = useRouter();
   const { id } = router.query;
   const { name } = data;
@@ -16,7 +16,7 @@ export default function aboutId({ data }) {
       </Head>
       <div
         style={{
-          minHeight: "100vh",
+          minHeight: '100vh',
         }}
       >
         <h1>About</h1>
@@ -29,7 +29,7 @@ export default function aboutId({ data }) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch("http://localhost:3000/api/hello");
+  const res = await fetch('http://localhost:3000/api/hello');
   const data = await res.json();
 
   // Pass data to the page via props

@@ -94,5 +94,5 @@ export default function Order() {
         <p>대기업회사에서운영하는중</p>
        </footer>
       </>
-    )
+    );
   }
