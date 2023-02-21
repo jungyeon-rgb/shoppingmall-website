@@ -4,10 +4,11 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css"; // *.module.css | scss | sass
 import { Button, Title1 } from "@fluentui/react-components";
 import { css } from "@emotion/react";
+import ProductsGrid from "./products/products-gird";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <main>
@@ -80,6 +81,7 @@ export default function Home() {
             </div>
           </div>
           <Button>^</Button>
+          <ProductsGrid posts />
         </article>
       </main>
     </>
