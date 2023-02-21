@@ -22,4 +22,5 @@ ul, ol, li {
 
 * {
     box-sizing: border-box;
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
 }
