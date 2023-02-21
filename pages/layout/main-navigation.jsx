@@ -1,5 +1,5 @@
-import classes from "./main-navigation.module.css";
-import Link from "next/link";
+import classes from './main-navigation.module.css';
+import Link from 'next/link';
 
 function MainNavigation() {
   return (
@@ -11,7 +11,7 @@ function MainNavigation() {
       </div>
       <nav>
         <ul>
-          <li clssName={classes.menu}>
+          <li className={classes.menu}>
             <Link href="/">홈</Link>
             <Link href="/products">문구</Link>
             <Link href="/">커뮤니티</Link>
