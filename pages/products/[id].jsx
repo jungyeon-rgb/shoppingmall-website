@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ProductsGrid from "../../components/products/products-grid";
-=======
-import Head from 'next/head';
-import { useRouter } from 'next/router';
->>>>>>> 906d0016af37d18aa3c2c705e4d290596cb1b15b
 
 export default function ProductsId({ data }) {
   /* 리액트 컴포넌트 함수는 파스칼 케이스 대문자로 시작 */

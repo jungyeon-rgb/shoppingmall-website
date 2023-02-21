@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./productItem.module.css";
@@ -22,46 +21,6 @@ export default function Products(props) {
       </Link>
       <ProductsGrid />
     </li>
-=======
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import {
-  StyledProductAnchor,
-  StyledProductContainer,
-  StyledProductInfo,
-  StyledProductPrice, StyledProductsContainer,
-  StyledProductTitle
-} from '@/pages/products/products.styles';
-
-export default function Products(props) {
-
-  const { posts } = props;
-
-  const router = useRouter();
-
-  const handleProductClick = (e, targetUrl) => {
-    e.preventDefault();
-    router.push(targetUrl);
-  };
-
-  return (
-      <StyledProductsContainer>
-        {posts.map(product => {
-            return (
-                <StyledProductAnchor key={product.id} onClick={(e) => handleProductClick(e, product.slug)} >
-                    <StyledProductContainer>
-                        <Image src={product.image} alt="product-image" width={300} height={300} />
-                        <StyledProductInfo>
-                            <StyledProductTitle>{product.title}</StyledProductTitle>
-                            <StyledProductPrice>{product.price.toLocaleString()}</StyledProductPrice>
-                        </StyledProductInfo>
-                    </StyledProductContainer>
-                </StyledProductAnchor>
-            );
-        })}
-      </StyledProductsContainer>
-
->>>>>>> 906d0016af37d18aa3c2c705e4d290596cb1b15b
   );
 }
 
