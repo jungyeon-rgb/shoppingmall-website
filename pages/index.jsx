@@ -16,19 +16,6 @@ export default function Home(props) {
           <div className={styles.head}>문구판매 사이트입니당근!</div>
         </Head> */}
         <article>
-          <div
-            className={styles.menuNav}
-            css={{
-              "&:hover": {
-                color: "#79a2d370",
-              },
-            }}
-          >
-            <p>홈</p>
-            <p>문구</p>
-            <p>커뮤니티</p>
-            <p>마이페이지</p>
-          </div>
           <div className={styles.Banner}>
             <img src="/img/item01.png" alt="item" className={styles.itemImg} />
           </div>

@@ -11,11 +11,19 @@ function MainNavigation() {
       </div>
       <nav>
         <ul>
-          <li className={classes.menu}>
-            <Link href="/">홈</Link>
-            <Link href="/products">문구</Link>
-            <Link href="/">커뮤니티</Link>
-            <Link href="/">마이페이지</Link>
+          <li>
+            <Link href="/" className={classes.menu}>
+              홈
+            </Link>
+            <Link href="/products" className={classes.menu}>
+              문구
+            </Link>
+            <Link href="/" className={classes.menu}>
+              커뮤니티
+            </Link>
+            <Link href="/" className={classes.menu}>
+              마이페이지
+            </Link>
           </li>
         </ul>
       </nav>
