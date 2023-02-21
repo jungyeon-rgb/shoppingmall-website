@@ -1,22 +1,11 @@
-<<<<<<< HEAD
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css"; // *.module.css | scss | sass
 import { Button, Title1 } from "@fluentui/react-components";
 import { css } from "@emotion/react";
-import ProductsGrid from "./products/products-gird";
-=======
-import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css'; // *.module.css | scss | sass
-import { Button, Title1 } from '@fluentui/react-components';
-import { css } from '@emotion/react';
-import ProductsGrid from './products/products-grid';
->>>>>>> 906d0016af37d18aa3c2c705e4d290596cb1b15b
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
   return (
@@ -30,8 +19,8 @@ export default function Home(props) {
           <div
             className={styles.menuNav}
             css={{
-              '&:hover': {
-                color: '#79a2d370',
+              "&:hover": {
+                color: "#79a2d370",
               },
             }}
           >
@@ -91,11 +80,7 @@ export default function Home(props) {
             </div>
           </div>
           <Button>^</Button>
-<<<<<<< HEAD
-          <ProductsGrid posts />
-=======
           {/*<ProductsGrid posts />*/}
->>>>>>> 906d0016af37d18aa3c2c705e4d290596cb1b15b
         </article>
       </main>
     </>

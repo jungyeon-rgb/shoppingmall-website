@@ -1,26 +1,50 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
-import Link from "next/link";
-import styles from "./productItem.module.css";
-import ProductsGrid from "./products-grid";
+import {
+  StyledProductAnchor,
+  StyledProductContainer,
+  StyledProductInfo,
+  StyledProductPrice,
+  StyledProductsContainer,
+  StyledProductTitle,
+} from "@/pages/products/products.styles";
 
 export default function Products(props) {
-  const { title, image, price, slug } = props.post;
-  let imagePath = `/img/products/${slug}`;
+  const { posts } = props;
+
+  const router = useRouter();
+
+  const handleProductClick = (e, targetUrl) => {
+    e.preventDefault();
+    router.push(targetUrl);
+  };
+
   return (
-    <li className={styles.post}>
-      <Link href={"/"}>
-        <div>
-          <div>
-            <Image src={image} alt={title} width={300} height={300} />
-          </div>
-          <div>
-            <h3>{title}</h3>
-            <p>{price}</p>
-          </div>
-        </div>
-      </Link>
-      <ProductsGrid />
-    </li>
+    <StyledProductsContainer>
+      {posts.map((product) => {
+        return (
+          <StyledProductAnchor
+            key={product.id}
+            onClick={(e) => handleProductClick(e, product.slug)}
+          >
+            <StyledProductContainer>
+              <Image
+                src={product.image}
+                alt="product-image"
+                width={300}
+                height={300}
+              />
+              <StyledProductInfo>
+                <StyledProductTitle>{product.title}</StyledProductTitle>
+                <StyledProductPrice>
+                  {product.price.toLocaleString()}
+                </StyledProductPrice>
+              </StyledProductInfo>
+            </StyledProductContainer>
+          </StyledProductAnchor>
+        );
+      })}
+    </StyledProductsContainer>
   );
 }
 
@@ -30,106 +54,81 @@ export async function getServerSideProps() {
   // const products = await res.json();
 
   // 임시 데이터로 대체
-<<<<<<< HEAD
-  const post = [
+  const posts = [
     {
+      id: 1,
       title: "Product 1",
-      image: "item01",
+      image: "https://picsum.photos/500",
       price: 1000,
       slug: "product-1",
     },
     {
+      id: 2,
       title: "Product 2",
       image: "https://picsum.photos/500",
       price: 2000,
       slug: "product-2",
     },
     {
+      id: 3,
       title: "Product 3",
-      image: "item01",
+      image: "https://picsum.photos/500",
       price: 3000,
       slug: "product-3",
-=======
-  const posts = [
-    {
-      id: 1,
-      title: 'Product 1',
-      image: 'https://picsum.photos/500',
-      price: 1000,
-      slug: 'product-1',
     },
     {
-      id: 2,
-      title: 'Product 2',
-      image: 'https://picsum.photos/500',
-      price: 2000,
-      slug: 'product-2',
-    },
-    {
-      id: 3,
-      title: 'Product 3',
-      image: 'https://picsum.photos/500',
+      id: 4,
+      title: "Product 4",
+      image: "https://picsum.photos/500",
       price: 3000,
-      slug: 'product-3',
+      slug: "product-3",
     },
     {
-        id: 4,
-      title: 'Product 4',
-      image: 'https://picsum.photos/500',
-      price: 3000,
-      slug: 'product-3',
-    },
-    {
-        id: 5,
-      title: 'Product 5',
-      image: 'https://picsum.photos/500',
+      id: 5,
+      title: "Product 5",
+      image: "https://picsum.photos/500",
       price: 7777,
-      slug: 'product-3',
+      slug: "product-3",
     },
     {
-        id: 6,
-      title: 'Product 6',
-      image: 'https://picsum.photos/500',
+      id: 6,
+      title: "Product 6",
+      image: "https://picsum.photos/500",
       price: 3000,
-      slug: 'product-3',
+      slug: "product-3",
     },
     {
-        id: 7,
-      title: 'Product 7',
-      image: 'https://picsum.photos/500',
+      id: 7,
+      title: "Product 7",
+      image: "https://picsum.photos/500",
       price: 3000,
-      slug: 'product-3',
+      slug: "product-3",
     },
     {
-        id: 8,
-      title: 'Product 8',
-      image: 'https://picsum.photos/500',
+      id: 8,
+      title: "Product 8",
+      image: "https://picsum.photos/500",
       price: 3000,
-      slug: 'product-3',
+      slug: "product-3",
     },
     {
-      title: 'Product 9',
-      image: 'https://picsum.photos/500',
+      title: "Product 9",
+      image: "https://picsum.photos/500",
       price: 2000,
-      slug: 'product-3',
+      slug: "product-3",
     },
     {
-        id: 9,
-      title: 'Product 10',
-      image: 'https://picsum.photos/500',
+      id: 9,
+      title: "Product 10",
+      image: "https://picsum.photos/500",
       price: 1000,
-      slug: 'product-3',
->>>>>>> 906d0016af37d18aa3c2c705e4d290596cb1b15b
+      slug: "product-3",
     },
   ];
 
   return {
     props: {
-<<<<<<< HEAD
-      post,
-=======
       posts,
->>>>>>> 906d0016af37d18aa3c2c705e4d290596cb1b15b
     },
   };
 }
