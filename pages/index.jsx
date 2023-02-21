@@ -2,9 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import {Inter} from '@next/font/google';
 import styles from '@/styles/Home.module.css'; // *.module.css | scss | sass
-import {Button, Title1} from '@fluentui/react-components';
 import {css} from '@emotion/react';
-import {EmotionButton} from '@/pages/index.styles';
+import {Button} from '@/pages/index.styles';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -120,11 +119,7 @@ export default function Home() {
                         </p>
                     </a>
                 </div>
-                <div>
-                    <Title1>Hello world!</Title1>
-                    <Button>A button</Button>
-                </div>
-                <EmotionButton>Emotion button</EmotionButton>
+                <Button>Emotion button</Button>
                 <div
                     css={{
                         backgroundColor: 'hotpink',
