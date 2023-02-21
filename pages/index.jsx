@@ -1,12 +1,11 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css'; // *.module.css | scss | sass
-import { Button, Title1 } from '@fluentui/react-components';
-import { css } from '@emotion/react';
-import ProductsGrid from './products/products-grid';
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "@/styles/Home.module.css"; // *.module.css | scss | sass
+import { Button, Title1 } from "@fluentui/react-components";
+import { css } from "@emotion/react";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
   return (
@@ -20,8 +19,8 @@ export default function Home(props) {
           <div
             className={styles.menuNav}
             css={{
-              '&:hover': {
-                color: '#79a2d370',
+              "&:hover": {
+                color: "#79a2d370",
               },
             }}
           >
