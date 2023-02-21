@@ -4,12 +4,14 @@ import Link from "next/link";
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>
-        <Link href="/">NextEvents</Link>
+      <div>
+        <Link href="/" className={classes.logo}>
+          사달라
+        </Link>
       </div>
       <nav>
         <ul>
-          <li>
+          <li clssName={classes.menu}>
             <Link href="/">홈</Link>
             <Link href="/products">문구</Link>
             <Link href="/">커뮤니티</Link>
