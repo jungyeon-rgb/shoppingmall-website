@@ -1,0 +1,64 @@
+.backgroun{
+    width: 1000px;
+    display: flex;
+    background-color: blue;
+}
+.myPageMenu{
+    width: 220px;
+}
+
+.cartBtn,
+.wishListBtn,
+.userInfoBtn{
+    border: 1px solid #a29f9f;
+    cursor: pointer;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 10px;
+    font-size: 18px;
+    transition: 200ms;
+    background-color: aqua;
+}
+
+.cartBtn:hover,
+.wishListBtn:hover,
+.userInfoBtn:hover{
+    background-color: azure;
+}
+
+.myOrderList{
+    width: 800px;
+    background-color: rgb(133, 187, 58);
+}
+
+.myOrder{
+    width: 700px;
+    height: 150px;
+    display: flex;
+    margin-left: 45px;
+    cursor: pointer;
+    border: 1px solid #a29f9f;
+    border-radius: 30px;
+    background-color: blanchedalmond;
+}
+
+.orderList{
+    margin-top: 30px;
+}
+
+.productImg{
+    width: 160px;
+    height: 120px;
+    margin: 13px 15px 0 30px;
+    border-radius: 30px;
+}
+
+.productName{
+    font-size: 20px;
+}
+
+.productPrice{
+    font-size: 15px;
+}

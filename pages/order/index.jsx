@@ -1,9 +1,10 @@
 import styles from '@/styles/Order.module.css';
+import {useRouter} from "next/router";
 
 export default function Order() {
     return (
       <>
-      <div className = {styles.topBox}>
+      {/* <div className = {styles.topBox}>
         <div className = {styles.userName}>사용자 님</div>
         <div>
           <button className = {styles.logOut}>
@@ -33,7 +34,7 @@ export default function Order() {
             <li><a href = '/menu/3'>커뮤니티</a></li>
             <li><a href = '/menu/4'>마이페이지</a></li>
           </ol>
-        </nav>
+        </nav> */}
   
        <main className = {styles.main}>
         <article className = {styles.article}>
@@ -53,7 +54,7 @@ export default function Order() {
           </div>
           <div className = {styles.order}>
             <div className = {styles.itemName}><h1>짱대박멋진상품</h1></div>
-            <div className = {styles.price}><h3>3억</h3></div>
+            <div className = {styles.price}><h3>3억 원</h3></div>
             <div className = {styles.itemCounter}>
               <button className = {styles.itemAdd}>+</button>
               <div className = {styles.itemCount}>0</div>
@@ -81,6 +82,7 @@ export default function Order() {
   
        <aside>
         <div className = {styles.bestItem}>
+        <p>베스트 상품! 안 사면 손해!!</p>
         <img src='/img/order/1.jpg' alt='bestItem' 
         className = {styles.bestItemImg} />
         <img src='/img/order/1.jpg' alt='bestItem' 
@@ -89,10 +91,7 @@ export default function Order() {
         className = {styles.bestItemImg} />
         </div>
        </aside>
-  
-       <footer>
-        <p>대기업회사에서운영하는중</p>
-       </footer>
       </>
     )
   }
+  
