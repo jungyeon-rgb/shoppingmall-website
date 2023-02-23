@@ -15,6 +15,11 @@ export const LayoutHeaderLogoStyled = styled.div`
     font-size: 42px;
 
     font-style: oblique;
+
+    border: 0.5rem outset pink;
+    border-radius: 50%;
+    margin: 2rem;
+    padding: 1rem;
   }
 `;
 
