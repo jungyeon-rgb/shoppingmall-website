@@ -33,8 +33,8 @@ export default function Products(props) {
               <Image
                 src={product.image}
                 alt="product-image"
-                width={300}
-                height={300}
+                width={200}
+                height={200}
               />
               <StyledProductInfo>
                 <StyledProductTitle>{product.title}</StyledProductTitle>
