@@ -59,6 +59,15 @@
     font-size: 20px;
 }
 
+.productEa{
+    display: flex;
+}
+
 .productPrice{
     font-size: 15px;
 }
+
+.finOrder{
+    background-color: rgb(105, 75, 36);
+}
+

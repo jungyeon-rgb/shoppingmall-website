@@ -15,7 +15,7 @@ function MainNavigation() {
             <Link href="/">홈</Link>
             <Link href="/products">문구</Link>
             <Link href="/">커뮤니티</Link>
-            <Link href="/">마이페이지</Link>
+            <Link href="/myPage">마이페이지</Link>
           </li>
         </ul>
       </nav>
