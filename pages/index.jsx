@@ -18,15 +18,12 @@ export default function Home(props) {
       <div className={styles.logInNav}>이경은님/로그아웃</div>
       <a href="/order">주문페이지 바로가기</a>
       <HomeProductContentStyled>
-        <p>3.3(금) ~ 3.10(금)</p>
-        <p>새로운 학기의 시작</p>
-        <p>
-          설레는 마음으로 새 학기를 준비하는 모든 이들을 위한 컬렉션.
-          <br />
-          사조몰 멤버들을 위한 최대 25% 할인 혜택을 지금 만나보세용가리
-        </p>
+        <h4>3.3(금) ~ 3.10(금)</h4>
+        <h2>새로운 학기의 시작</h2>
+        <p>설레는 마음으로 새 학기를 준비하는 모든 이들을 위한 컬렉션.</p>
+        <p>사조몰 멤버들을 위한 최대 25% 할인 혜택을 지금 만나보세용가리</p>
         <HomeToProductLinkStyled>
-          <Link href="/products">컬렉션 구매하기</Link>
+          <Link href="/products">제품 구경하러 가기</Link>
         </HomeToProductLinkStyled>
       </HomeProductContentStyled>
       <HomeProductImageDivStyled>
@@ -34,20 +31,20 @@ export default function Home(props) {
         <HomeProductImageStyled></HomeProductImageStyled>
         <HomeProductImageStyled></HomeProductImageStyled>
         <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-
-        <Image
-          src="/img/item01.png"
-          alt="product-image"
-          width={200}
-          height={200}
-        />
-        {/* next js는 기본 경로가 public */}
       </HomeProductImageDivStyled>
+      <HomeProductImageDivStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+      </HomeProductImageDivStyled>
+      <HomeProductImageDivStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+        <HomeProductImageStyled></HomeProductImageStyled>
+      </HomeProductImageDivStyled>
+      {/* next js는 기본 경로가 public */}
     </>
   );
 }
