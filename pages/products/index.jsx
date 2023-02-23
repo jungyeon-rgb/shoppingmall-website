@@ -22,11 +22,13 @@ export default function Products(props) {
   return (
     <StyledProductsContainer>
       {product.map((product) => {
+        // 상품 정보 렌더링
         return (
           <StyledProductAnchor
             key={product.id}
             onClick={(e) => handleProductClick(e, product.slug)}
           >
+            {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
             <StyledProductContainer>
               <Image
                 src={product.image}
