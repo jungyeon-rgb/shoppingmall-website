@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const Button = styled.button`
   padding: 32px;
@@ -12,3 +12,23 @@ export const Button = styled.button`
     color: white;
   }
 `;
+
+export const HomeProductContentStyled = styled.div``;
+
+export const HomeToProductLinkStyled = styled.button``;
+export const HomeProductImageDivStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1200px;
+
+  margin: 0 50px;
+`;
+
+export const HomeProductImageStyled = styled.img`
+  width: 200px;
+  height: 200px;
+`;
+
+// export const HomeProductTitleStyled = styled.img``
