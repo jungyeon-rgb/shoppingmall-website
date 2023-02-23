@@ -3,15 +3,6 @@ import ReactMarkdown from "react-markdown";
 import ProductHeader from "./post-header";
 import classes from "./product-content.styles";
 
-const DUMMY_PRODUCT = {
-  id: 1,
-  title: "Product 1",
-  image: "https://picsum.photos/500",
-  price: 1000,
-  slug: "product-1",
-  content: "# 완전 멋진 물건이다",
-};
-
 export default function ProductContent() {
   const imagePath = `/images/posts/${DUMMY_PRODUCT.slug}/${DUMMY_PRODUCT.image}`;
 
@@ -22,3 +13,20 @@ export default function ProductContent() {
     </article>
   );
 }
+
+const DUMMY_PRODUCT = [
+  {
+    id: 1,
+    title: "Product 1",
+    image: "https://picsum.photos/500",
+    price: 1000,
+    slug: "product-1",
+    content: "# 완전 멋진 물건이다",
+  },
+];
+
+return {
+  props: {
+    product: DUMMY_PRODUCT,
+  },
+};
