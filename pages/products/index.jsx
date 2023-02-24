@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import Image from "next/image";
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import {
   StyledProductAnchor,
   StyledProductContainer,
@@ -7,7 +7,7 @@ import {
   StyledProductPrice,
   StyledProductsContainer,
   StyledProductTitle,
-} from "@/pages/products/products.styles";
+} from '@/pages/products/products.styles';
 
 export default function Products(props) {
   const { product } = props;
@@ -16,7 +16,7 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(targetUrl);
+    router.push(`/products/${targetUrl}`);
   };
 
   return (
@@ -59,72 +59,72 @@ export async function getServerSideProps() {
   const DUMMY_PRODUCT = [
     {
       id: 1,
-      title: "Product 1",
-      image: "https://picsum.photos/500",
+      title: 'Product 1',
+      image: 'https://picsum.photos/500',
       price: 1000,
-      slug: "product-1",
+      slug: 'product-1',
     },
     {
       id: 2,
-      title: "Product 2",
-      image: "https://picsum.photos/500",
+      title: 'Product 2',
+      image: 'https://picsum.photos/500',
       price: 2000,
-      slug: "product-2",
+      slug: 'product-2',
     },
     {
       id: 3,
-      title: "Product 3",
-      image: "https://picsum.photos/500",
+      title: 'Product 3',
+      image: 'https://picsum.photos/500',
       price: 3000,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
       id: 4,
-      title: "Product 4",
-      image: "https://picsum.photos/500",
+      title: 'Product 4',
+      image: 'https://picsum.photos/500',
       price: 3000,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
       id: 5,
-      title: "Product 5",
-      image: "https://picsum.photos/500",
+      title: 'Product 5',
+      image: 'https://picsum.photos/500',
       price: 7777,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
       id: 6,
-      title: "Product 6",
-      image: "https://picsum.photos/500",
+      title: 'Product 6',
+      image: 'https://picsum.photos/500',
       price: 3000,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
       id: 7,
-      title: "Product 7",
-      image: "https://picsum.photos/500",
+      title: 'Product 7',
+      image: 'https://picsum.photos/500',
       price: 3000,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
       id: 8,
-      title: "Product 8",
-      image: "https://picsum.photos/500",
+      title: 'Product 8',
+      image: 'https://picsum.photos/500',
       price: 3000,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
-      title: "Product 9",
-      image: "https://picsum.photos/500",
+      title: 'Product 9',
+      image: 'https://picsum.photos/500',
       price: 2000,
-      slug: "product-3",
+      slug: 'product-3',
     },
     {
       id: 9,
-      title: "Product 10",
-      image: "https://picsum.photos/500",
+      title: 'Product 10',
+      image: 'https://picsum.photos/500',
       price: 1000,
-      slug: "product-3",
+      slug: 'product-3',
     },
   ];
 

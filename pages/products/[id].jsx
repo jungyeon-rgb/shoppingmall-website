@@ -1,11 +1,14 @@
-import ProductContent from "@/components/Product/product-detail/product-content";
+import { useRouter } from 'next/router';
+import ProductContent from '@/components/Product/product-detail/product-content';
 
 export default function PostDetailPage() {
-  return <ProductContent />;
+  const router = useRouter();
+  const { id } = router.query;
+
+  return <ProductContent productId={id} />;
 }
 
 // import Head from 'next/head';
-// import { useRouter } from 'next/router';
 
 // export default function ProductsId({ data }) {
 //   /* 리액트 컴포넌트 함수는 파스칼 케이스 대문자로 시작 */
