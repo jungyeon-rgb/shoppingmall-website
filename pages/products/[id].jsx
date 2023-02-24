@@ -1,12 +1,49 @@
-import { useRouter } from 'next/router';
-import ProductContent from '@/components/Product/product-detail/product-content';
+import { useRouter } from "next/router";
+import ProductContent from "@/components/Product/product-detail/product-content";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function PostDetailPage() {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const { id } = router.query;
+  const { title } = data ? data.title : "";
 
-  return <ProductContent productId={id} />;
+  useEffect(() => {
+    axios
+      .get("https://localhost:3000/api/hello")
+      .then((response) => {
+        setData(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log("에러입니다 미아내요");
+      });
+  }, []);
+
+  return (
+    <div>
+      {isLoading ? (
+        <p>미아내요 조굼만 더 기다려줘유</p>
+      ) : (
+        <ul>
+          {/* {data.map((item) => (
+            <li key={item.id}>{item.title}</li>
+          ))} */}
+          <ProductContent productId={id} productName={title} />
+        </ul>
+      )}
+    </div>
+  );
 }
+
+// export default function PostDetailPage() {
+//   const router = useRouter();
+//   const { id } = router.query;
+
+//   return <ProductContent productId={id} />;
+// }
 
 // import Head from 'next/head';
 
