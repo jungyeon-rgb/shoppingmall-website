@@ -46,6 +46,7 @@
 
 .orderList{
     margin-top: 30px;
+    list-style: none;
 }
 
 .productImg{

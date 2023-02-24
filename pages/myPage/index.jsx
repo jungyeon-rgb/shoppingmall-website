@@ -2,7 +2,6 @@ import styles from '@/styles/myPage.module.css';
 import Link from "next/link";
 import React from 'react';
 
-
 export default function myPage(){
     return (<>
     <main className={styles.backgroun}>
@@ -29,7 +28,7 @@ export default function myPage(){
         <div className={styles.myOrderList}>
         <div className={styles.myOrder}>
             <div>
-                <img className={styles.productImg} src='/img/order/1.jpg' alt='itemSideImg'></img>
+                <a href='/'><img className={styles.productImg} src='/img/order/1.jpg' alt='itemSideImg' /></a>
             </div>
             <ul className={styles.orderList}>
                 <li><div className={styles.productName}>사고싶은상품은사고말겠어</div></li>
@@ -58,15 +57,19 @@ export default function myPage(){
 }
 
 function Counter({value}){
-    let countState = React,useState(0);
+    let countState = React.useState(0);
     let count = countState[0];
     let setCount = countState[1];
     function up(){
         setCount (count+1);
         console.log(setCount);
     }
+    function down(){
+        setCount(count-1);
+    }
     return <>
     <button onClick={up}>+</button>
     {count}
+    <button onClick={down}>-</button>
     </>
 }
