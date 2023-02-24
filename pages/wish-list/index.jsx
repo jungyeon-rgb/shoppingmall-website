@@ -7,17 +7,17 @@ export default function wishList(){
         <div className={styles.myPageMenu}>
             <div className={styles.cart}>
                 <button className={styles.cartBtn}>
-                    <a href = '/myPage'>장바구니</a>
+                    <a href = '/my-page'>장바구니</a>
                 </button>
             </div>
             <div className={styles.wishList}>
                 <button className={styles.wishListBtn}>
-                    <a href = '/wishList'>찜 목록</a>
+                    <a href = '/wish-list'>찜 목록</a>
                 </button>
             </div>
             <div className={styles.userInfo}>
                 <button className={styles.userInfoBtn}>
-                    <a href = '/userInfo'>정보 수정</a>
+                    <a href = '/user-info'>정보 수정</a>
                 </button>
             </div>
         </div>
