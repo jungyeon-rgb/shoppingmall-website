@@ -1,18 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css"; // *.module.css | scss | sass
+import styles from '@/styles/Home.module.css'; // *.module.css | scss | sass
 import {
   HomeProductContentStyled,
   HomeProductImageDivStyled,
   HomeProductImageStyled,
   HomeToProductLinkStyled,
-} from "@/pages/index.styles";
-import Link from "next/link";
+} from '@/pages/index.styles';
+import Link from 'next/link';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home(props) {
+export default function Home() {
   return (
     <>
       <div className={styles.logInNav}>이경은님/로그아웃</div>
