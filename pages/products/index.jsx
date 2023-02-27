@@ -38,6 +38,7 @@ export default function Products(props) {
               />
               <StyledProductInfo>
                 <StyledProductTitle>{product.title}</StyledProductTitle>
+                {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
                 <StyledProductPrice>
                   {product.price.toLocaleString()}
                 </StyledProductPrice>
