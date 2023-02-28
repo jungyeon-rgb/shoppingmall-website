@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const StyledProductsContainer = styled.div`
   display: flex;
@@ -54,3 +54,5 @@ export const StyledProductPrice = styled.p`
 
   cursor: pointer;
 `;
+
+export const ProductContentToCartButton = styled.button``;
