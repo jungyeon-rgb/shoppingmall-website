@@ -37,8 +37,13 @@ export default function PostDetailPage(props) {
 export async function getServerSideProps({ params }) {
 
   try {
+
+    // TODO: API 서버 URL 로 연결하기
+    // const result = await axios.get(
+    //   `${process.env.NEXT_PUBLIC_API_URL}/api/products/${params.id}`
+    // );
     const result = await axios.get(
-      `http://localhost:3000/api/products/${params.id}`
+        `http://localhost:3000/api/products/${params.id}`
     );
 
     if (result.status === 200) {
