@@ -1,32 +1,39 @@
-import Link from 'next/link';
+import Link from "next/link";
 import {
   LayoutHeaderLogoStyled,
   LayoutHeaderNavLiStyled,
   LayoutHeaderNavStyled,
   LayoutHeaderNavUlStyled,
   LayoutHeaderStyled,
-} from '@/components/Layout/Layout.styles';
+  LayoutHeaderLoginLiStyled,
+} from "@/components/Layout/Layout.styles";
 
 export default function Layout({ children }) {
   return (
     <>
       <LayoutHeaderStyled>
+        <LayoutHeaderLoginLiStyled>
+          <Link href="/login">로그인</Link>
+        </LayoutHeaderLoginLiStyled>
         <LayoutHeaderLogoStyled>
           <Link href="/">Sadalla</Link>
         </LayoutHeaderLogoStyled>
         <LayoutHeaderNavStyled>
           <LayoutHeaderNavUlStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/">홈</Link>
+              <Link href="/products">제품 전체</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products">문구</Link>
+              <Link href="/products?=note">노트</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/">커뮤니티</Link>
+              <Link href="/products?=sticker">스티커</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/">마이페이지</Link>
+              <Link href="/products?=pencil">필기구</Link>
+            </LayoutHeaderNavLiStyled>
+            <LayoutHeaderNavLiStyled>
+              <Link href="/my-page">장바구니</Link>
             </LayoutHeaderNavLiStyled>
           </LayoutHeaderNavUlStyled>
         </LayoutHeaderNavStyled>
