@@ -24,7 +24,7 @@ export default function PostDetailPage(props) {
         <p>미아내요 조굼만 더 기다려줘유</p>
       ) : (
         <ul>
-          {product.map((item) => (
+          {/* {product.map((item) => (
             <ProductContent
               key={product.id}
               productId={product.id}
@@ -34,7 +34,16 @@ export default function PostDetailPage(props) {
               productContent={product.content}
               productImage={product.image}
             />
-          ))}
+          ))} */}
+          <ProductContent
+            key={product.id}
+            productId={product.id}
+            productName={product.title}
+            productPrice={product.price}
+            productMaker={product.maker}
+            productContent={product.content}
+            productImage={product.image}
+          />
         </ul>
       )}
     </div>
@@ -51,8 +60,10 @@ export async function getServerSideProps({ params }) {
     const result = await axios.get(
       `http://localhost:3000/api/products/${params.id}`
     );
+    //axios.get 메소드를 이용해서 HTTP GET 요청을 보냄
 
     if (result.status === 200) {
+      // 결과로 받은 데이터 result 변수로 할당
       return {
         props: {
           product: result.data,
@@ -66,12 +77,15 @@ export async function getServerSideProps({ params }) {
           error: {
             statusCode: result.status,
             title: `${result.statusText} - ${result.request.url}`,
+            //title은 에러메세지 결합한 문자열
           },
         },
       };
     }
   } catch (err) {
+    //예외
     console.error(err.response);
+    //err.response로 서버에서 받은 응답 객체를 참조
     return {
       props: {
         product: null,
