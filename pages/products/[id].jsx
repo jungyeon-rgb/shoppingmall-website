@@ -8,9 +8,31 @@ export default function PostDetailPage(props) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    router.isReady && setIsLoading(false);
+  const [productData, setProductData] = useState(null);
+
+  useEffect(async () => {
+    try {
+      const result = await axios.get(
+        `http://localhost:3000/api/products/${router.query.id}`
+      );
+      if (result.status === 200) {
+        setProductData({
+          id: result.data.id,
+          title: result.data.title,
+          price: result.data.price,
+          maker: result.data.maker,
+          content: result.data.content,
+          image: result.data.image,
+        });
+        setIsLoading(false);
+      } else {
+        throw new Error(`${result.statusText} - ${result.request.url}`);
+      }
+    } catch (error) {
+      setIsLoading(false);
+    }
   }, []);
+
   if (error !== null)
     return (
       <div>
@@ -24,19 +46,8 @@ export default function PostDetailPage(props) {
         <p>미아내요 조굼만 더 기다려줘유</p>
       ) : (
         <ul>
-          {/* {product.map((item) => (
-            <ProductContent
-              key={product.id}
-              productId={product.id}
-              productName={product.title}
-              productPrice={product.price}
-              productMaker={product.maker}
-              productContent={product.content}
-              productImage={product.image}
-            />
-          ))} */}
           <ProductContent
-            key={product.id}
+            // key={product.id}
             productId={product.id}
             productName={product.title}
             productPrice={product.price}

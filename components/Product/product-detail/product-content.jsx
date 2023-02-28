@@ -4,15 +4,17 @@ import ReactMarkdown from "react-markdown";
 import classes from "./product-content.styles";
 import ProductHeader from "@/components/Product/product-detail/product-header";
 
-export default function ProductContent(productId) {
+export default function ProductContent(productId, props) {
   const imagePath = `/images/posts/${DUMMY_PRODUCT.slug}/${DUMMY_PRODUCT.image}`;
+  const { id, maker, slug, title, content, price, image } = props;
 
   return (
     <article className={classes.content}>
-      <ProductHeader title={DUMMY_PRODUCT.title} image={imagePath} />
-      <ReactMarkdown>{DUMMY_PRODUCT.content}</ReactMarkdown>
-      <h3>{DUMMY_PRODUCT.price}</h3>
-      <p>{DUMMY_PRODUCT.maker}</p>
+      <ProductHeader title={props.title} image={imagePath} />
+      <ReactMarkdown>{props.content}</ReactMarkdown>
+      <h3>{props.price}</h3>
+      <p>{props.maker}</p>
+      <p>{props.id}</p>
     </article>
   );
 }
