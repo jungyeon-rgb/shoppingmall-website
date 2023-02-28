@@ -18,6 +18,7 @@ export default function OrderList() {
       price: 1000,
       totalPrice: 20000,
     },
+    // 아래의 더미데이터로 쓸 수 있나요?
   ]);
 
   function handleCheckboxChange(event) {
@@ -67,6 +68,7 @@ export default function OrderList() {
               <td>
                 <input
                   type="checkbox"
+                  checked="checked"
                   value={item.id}
                   onChange={handleCheckboxChange}
                 />
