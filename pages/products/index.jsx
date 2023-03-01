@@ -38,6 +38,7 @@ export default function Products(props) {
               />
               <StyledProductInfo>
                 <StyledProductTitle>{product.title}</StyledProductTitle>
+                {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
                 <StyledProductPrice>
                   {product.price.toLocaleString()}
                 </StyledProductPrice>
@@ -58,70 +59,79 @@ export async function getServerSideProps() {
   // 임시 데이터로 대체
   const DUMMY_PRODUCT = [
     {
+      id: 100,
+      title: 'Products 1',
+      image: 'https://picsum.photos/500',
+      price: 1000,
+      slug: 'product-1',
+      content: '# 완전 멋진 물건이다',
+      maker: '경은문구사',
+    },
+    {
       id: 1,
-      title: 'Product 1',
+      title: 'Products 1',
       image: 'https://picsum.photos/500',
       price: 1000,
       slug: 'product-1',
     },
     {
       id: 2,
-      title: 'Product 2',
+      title: 'Products 2',
       image: 'https://picsum.photos/500',
       price: 2000,
       slug: 'product-2',
     },
     {
       id: 3,
-      title: 'Product 3',
+      title: 'Products 3',
       image: 'https://picsum.photos/500',
       price: 3000,
       slug: 'product-3',
     },
     {
       id: 4,
-      title: 'Product 4',
+      title: 'Products 4',
       image: 'https://picsum.photos/500',
       price: 3000,
       slug: 'product-3',
     },
     {
       id: 5,
-      title: 'Product 5',
+      title: 'Products 5',
       image: 'https://picsum.photos/500',
       price: 7777,
       slug: 'product-3',
     },
     {
       id: 6,
-      title: 'Product 6',
+      title: 'Products 6',
       image: 'https://picsum.photos/500',
       price: 3000,
       slug: 'product-3',
     },
     {
       id: 7,
-      title: 'Product 7',
+      title: 'Products 7',
       image: 'https://picsum.photos/500',
       price: 3000,
       slug: 'product-3',
     },
     {
       id: 8,
-      title: 'Product 8',
+      title: 'Products 8',
       image: 'https://picsum.photos/500',
       price: 3000,
       slug: 'product-3',
     },
     {
-      title: 'Product 9',
+      title: 'Products 9',
       image: 'https://picsum.photos/500',
       price: 2000,
       slug: 'product-3',
     },
     {
       id: 9,
-      title: 'Product 10',
+      title: 'Products 10',
       image: 'https://picsum.photos/500',
       price: 1000,
       slug: 'product-3',
