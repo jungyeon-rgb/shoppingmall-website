@@ -5,16 +5,12 @@ import {
   LayoutHeaderNavStyled,
   LayoutHeaderNavUlStyled,
   LayoutHeaderStyled,
-  LayoutHeaderLoginLiStyled,
 } from "@/components/Layout/Layout.styles";
 
 export default function Layout({ children }) {
   return (
     <>
       <LayoutHeaderStyled>
-        <LayoutHeaderLoginLiStyled>
-          <Link href="/login">로그인</Link>
-        </LayoutHeaderLoginLiStyled>
         <LayoutHeaderLogoStyled>
           <Link href="/">Sadalla</Link>
         </LayoutHeaderLogoStyled>

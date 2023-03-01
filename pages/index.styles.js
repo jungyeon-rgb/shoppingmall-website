@@ -14,6 +14,15 @@ import styled from "@emotion/styled";
 // `;
 // /*flex-direction: column;
 
+export const HomeImageSlideStyled = styled.div`
+  height: 300px;
+  width: 90%;
+  display: flex;
+  .swiper {
+    align-items: center;
+    justify-content: center;
+  }
+`;
 export const HomeProductEventCommentStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -79,87 +88,5 @@ export const HomeProductImageStyled = styled.img`
   border: 3px solid #5fafd4;
   background-color: #5fafd4;
   border-radius: 35% 35% 35% 0;
-`;
-
-export const HomeImageSlideStyled = styled.div`
-  align-items: center;
-  justify-content: center;
-
-  #slide {
-    width: 100%;
-    padding: 0 15vw;
-    position: relative;
-    margin: 1vw 0 0 0;
-  }
-
-  #slide i {
-    font-size: 30px;
-  }
-
-  #slide .slider-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-  }
-
-  #slide .slider-container span {
-    position: absolute;
-    z-index: 99;
-    top: 50%;
-    cursor: pointer;
-  }
-
-  #slide .slider-container .leftBtn {
-    left: 12%;
-    transform: translate(0, -50%);
-  }
-
-  #slide .slider-container .rightBtn {
-    right: 12%;
-    transform: translate(0, -50%);
-  }
-
-  #slide .slider-container .slider {
-    display: flex;
-    width: 101%;
-  }
-
-  #slide .slider-container .slider span {
-    display: block;
-    position: relative;
-    min-width: 100%;
-  }
-
-  #slide .slider-container .slider span .text-wrap {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translate(0, -50%);
-    width: 29%;
-    color: #fff;
-  }
-
-  #slide .slider-container .slider span .text-wrap h1 {
-    line-height: 140%;
-    font-size: 33px;
-  }
-
-  #slide .slider-container .slider span .text-wrap h4 {
-    font-size: 13px;
-    margin: 30px 0 0 0;
-  }
-
-  #slide .slider-container .slider span .text-wrap h5 {
-    line-height: 140%;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin: 0 0 10px 0;
-  }
-
-  & h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 `;
 // export const HomeProductTitleStyled = styled.img``
