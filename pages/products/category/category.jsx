@@ -10,20 +10,30 @@ import {
 } from "@/pages/products/products.styles";
 import axios from "axios";
 
+function searchParam(key) {
+  return new URLSearchParams(location.search).get(key);
+}
+// 체크하
+
 export default function Products(props) {
   const { product } = props;
-
   const router = useRouter();
+  const categoryValue = searchParam("category");
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/${targetUrl}`);
+    router.push(`/products?=category${targetUrl}`);
+    // 체크하기
   };
+
+  const filteredProduct = categoryValue
+    ? product.filter((p) => p.category === categoryValue)
+    : product;
 
   return (
     <StyledProductsContainer>
-      {product &&
-        product.map((product) => {
+      {filteredProduct &&
+        filteredProduct.map((product) => {
           // 상품 정보 렌더링
           return (
             <StyledProductAnchor
@@ -40,7 +50,6 @@ export default function Products(props) {
                 />
                 <StyledProductInfo>
                   <StyledProductTitle>{product.title}</StyledProductTitle>
-                  {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
                   <StyledProductPrice>
                     {product.price.toLocaleString()}
                   </StyledProductPrice>
@@ -53,17 +62,21 @@ export default function Products(props) {
   );
 }
 
-export async function getServerSideProps({ params }) {
-  // API를 호출해서 상품 데이터를 가져오는 경우
-  // const res = await fetch("http://localhost:3000/api/products");
-  // const products = await res.json();
+export async function getServerSideProps(context) {
+  const { query } = context;
+  const categoryValue = query.category;
 
   try {
-    const result = await axios.get(`http://localhost:3000/api/${params.id}}`);
+    const result = await axios.get(
+      `http://localhost:3000/api/products?category=${query.id}`
+    );
     if (result.status === 200) {
+      const filteredData = categoryValue
+        ? result.data.filter((p) => p.category === categoryValue)
+        : result.data;
       return {
         props: {
-          product: result.data,
+          product: filteredData,
         },
       };
     } else {
@@ -78,7 +91,7 @@ export async function getServerSideProps({ params }) {
       };
     }
   } catch (err) {
-    const statusCode = err.response ? err.response.status : "에발발";
+    const statusCode = err.response ? err.response.status : "에러발생";
     console.error(err.response);
     return {
       props: {
