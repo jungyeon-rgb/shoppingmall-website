@@ -41,12 +41,12 @@ export const ImageContentColumnStyled = styled.div`
     padding: 12px 0;
   }
   
-  > a:nth-child(odd) {
+  > a:nth-of-type(odd) {
     display: flex;
     justify-content: flex-start;
   }
   
-  > a:nth-child(even) {
+  > a:nth-of-type(even) {
     display: flex;
     justify-content: flex-end;
   }
