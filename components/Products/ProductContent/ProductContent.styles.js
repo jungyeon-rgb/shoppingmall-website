@@ -2,20 +2,34 @@ import styled from "@emotion/styled";
 
 export const ProductContentContainer = styled.div`
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: center;
   margin: 150px auto;
+  height: 650px;
 `;
 
 export const ProductContentMain = styled.div`
-  display: flex;
+  display: initial;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 150px;
+  margin: 0 50px;
+  width: 400px;
   & p {
-    font-size: 20px;
+    font-size: 15px;
     margin: 10px;
+  }
+  & h3 {
+    font-size: 25px;
+    font-weight: 300;
+  }
+& h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+& hr {
+    border: 1px dashed #000000;
+}
   }
 `;
 export const ProductContentButtonContainer = styled.div`
