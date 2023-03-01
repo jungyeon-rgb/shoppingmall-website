@@ -19,37 +19,42 @@ export const HomeProductEventCommentStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   margin: 100px auto;
-
-          <h1>이미지슬라이드</h1>
 `;
 
 export const HomeProductContentStyled = styled.div`
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  margin: 60px auto;
-  height: 600px;
-  width: 95%;
-
-  // background-color: #f7da64;
-
-  font-size: 20px;
-  & > p {
-    margin: 5px auto;
-  }
+  width: 100%;
+  max-width: 550px;
+  padding: 30px 0;
+  margin: 0 auto;
 `;
 
-export const ImageContentRowStyled = styled.div`
+export const ImageContentColumnStyled = styled.div`
   display: flex;
-  flex-direction: row;
-  margin: 0 10px;
+  flex-direction: column;
+  width: 100%;
+  
+  > a {
+    padding: 12px 0;
+  }
+  
+  > a:nth-child(odd) {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  > a:nth-child(even) {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-  & > Img {
-    margin: 0 20px;
+  img {
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
   }
 `;
 

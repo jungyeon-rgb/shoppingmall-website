@@ -5,8 +5,8 @@ import {
   HomeProductImageDivStyled,
   HomeProductImageStyled,
   HomeToProductLinkStyled,
-  ImageContentRowStyled,
-  HomeProductEventCommentStyled,
+  ImageContentColumnStyled,
+  HomeProductEventCommentStyled, ImageContentColumnItemStyled,
 } from '@/pages/index.styles';
 import SwiperComponent from '@/components/Swiper/Swiper';
 
@@ -22,7 +22,7 @@ export default function Index() {
       </HomeProductEventCommentStyled>
 
       <HomeProductContentStyled>
-        <ImageContentRowStyled>
+        <ImageContentColumnStyled>
           <Link href="/products">
             <Image
               src="/img/products/clock.png"
@@ -63,7 +63,7 @@ export default function Index() {
               height={200}
             />
           </Link>
-        </ImageContentRowStyled>
+        </ImageContentColumnStyled>
       </HomeProductContentStyled>
     </>
   );
