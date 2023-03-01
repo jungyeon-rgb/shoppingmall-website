@@ -45,8 +45,8 @@ export default function Products(props) {
                 <Image
                   src={product.image}
                   alt="product-image"
-                  width={200}
-                  height={200}
+                  width={600}
+                  height={600}
                 />
                 */
                 <StyledProductInfo>

@@ -43,7 +43,7 @@ export async function getServerSideProps({ params }) {
     //   `${process.env.NEXT_PUBLIC_API_URL}/api/products/${params.id}`
     // );
     const result = await axios.get(
-      `http://localhost:3000/api/products/${params.id}`
+      `${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
     );
 
     if (result.status === 200) {
@@ -70,8 +70,10 @@ export async function getServerSideProps({ params }) {
       props: {
         product: null,
         error: {
-          statusCode: err.response.status,
-          title: err.response.statusText,
+          statusCode: err.response ? err.response.status : 500,
+          title: err.response
+            ? err.response.statusText
+            : "Internal Server Error",
         },
       },
     };

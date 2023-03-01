@@ -27,12 +27,12 @@ export default function SwiperComponent() {
       autoplay={{ delay: 2500, disableOnInteraction: false }}
     >
       <SwiperSlide>
-        <Link href="/products?category=pen">
+        <Link href="/products/category?category=pen">
           <Image src="/img/swiper/pen.jpg" alt="펜" width={250} height={200} />
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products?category=postcard">
+        <Link href="/products/category?category=postcard">
           <Image
             src="/img/swiper/postcard.jpg"
             alt="엽서"
@@ -42,7 +42,7 @@ export default function SwiperComponent() {
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products?category=sticker">
+        <Link href="/products/category?category=sticker">
           <Image
             src="/img/swiper/sticker.jpg"
             alt="스티커"
@@ -52,7 +52,7 @@ export default function SwiperComponent() {
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products?category=watch">
+        <Link href="/products/category?category=watch">
           <Image
             src="/img/swiper/watch.jpg"
             alt="시계"
