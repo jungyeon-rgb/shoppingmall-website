@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 // export const Button = styled.button`
 //   padding: 32px;
@@ -30,22 +30,24 @@ export const HomeProductContentStyled = styled.div`
   max-width: 550px;
   padding: 30px 0;
   margin: 0 auto;
+
+  background-image: url("/img/background-image.png");
 `;
 
 export const ImageContentColumnStyled = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+
   > a {
     padding: 12px 0;
   }
-  
+
   > a:nth-of-type(odd) {
     display: flex;
     justify-content: flex-start;
   }
-  
+
   > a:nth-of-type(even) {
     display: flex;
     justify-content: flex-end;

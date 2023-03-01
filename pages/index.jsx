@@ -1,14 +1,15 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 import {
   HomeProductContentStyled,
   HomeProductImageDivStyled,
   HomeProductImageStyled,
   HomeToProductLinkStyled,
   ImageContentColumnStyled,
-  HomeProductEventCommentStyled, ImageContentColumnItemStyled,
-} from '@/pages/index.styles';
-import SwiperComponent from '@/components/Swiper/Swiper';
+  HomeProductEventCommentStyled,
+  ImageContentColumnItemStyled,
+} from "@/pages/index.styles";
+import SwiperComponent from "@/components/Swiper/Swiper";
 
 export default function Index() {
   return (
@@ -31,6 +32,7 @@ export default function Index() {
               height={200}
             />
           </Link>
+
           <Link href="/products">
             <Image
               src="/img/products/crayon.png"
@@ -39,6 +41,7 @@ export default function Index() {
               height={200}
             />
           </Link>
+
           <Link href="/products">
             <Image
               src="/img/products/flim.png"
@@ -55,6 +58,7 @@ export default function Index() {
               height={100}
             />
           </Link>
+
           <Link href="/products">
             <Image
               src="/img/products/postcard.png"
