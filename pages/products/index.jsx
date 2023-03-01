@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import { useRouter } from "next/router";
+import Image from "next/image";
 import {
   StyledProductAnchor,
   StyledProductContainer,
@@ -7,7 +7,7 @@ import {
   StyledProductPrice,
   StyledProductsContainer,
   StyledProductTitle,
-} from '@/pages/products/products.styles';
+} from "@/pages/products/products.styles";
 
 export default function Products(props) {
   const { product } = props;
@@ -21,32 +21,33 @@ export default function Products(props) {
 
   return (
     <StyledProductsContainer>
-      {product.map((product) => {
-        // 상품 정보 렌더링
-        return (
-          <StyledProductAnchor
-            key={product.id}
-            onClick={(e) => handleProductClick(e, product.slug)}
-          >
-            {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
-            <StyledProductContainer>
-              <Image
-                src={product.image}
-                alt="product-image"
-                width={200}
-                height={200}
-              />
-              <StyledProductInfo>
-                <StyledProductTitle>{product.title}</StyledProductTitle>
-                {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
-                <StyledProductPrice>
-                  {product.price.toLocaleString()}
-                </StyledProductPrice>
-              </StyledProductInfo>
-            </StyledProductContainer>
-          </StyledProductAnchor>
-        );
-      })}
+      {product &&
+        product.map((product) => {
+          // 상품 정보 렌더링
+          return (
+            <StyledProductAnchor
+              key={product.id}
+              onClick={(e) => handleProductClick(e, product.slug)}
+            >
+              {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
+              <StyledProductContainer>
+                <Image
+                  src={product.image}
+                  alt="product-image"
+                  width={200}
+                  height={200}
+                />
+                <StyledProductInfo>
+                  <StyledProductTitle>{product.title}</StyledProductTitle>
+                  {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
+                  <StyledProductPrice>
+                    {product.price.toLocaleString()}
+                  </StyledProductPrice>
+                </StyledProductInfo>
+              </StyledProductContainer>
+            </StyledProductAnchor>
+          );
+        })}
     </StyledProductsContainer>
   );
 }
@@ -56,91 +57,36 @@ export async function getServerSideProps() {
   // const res = await fetch("http://localhost:3000/api/products");
   // const products = await res.json();
 
-  // 임시 데이터로 대체
-  const DUMMY_PRODUCT = [
-    {
-      id: 100,
-      title: 'Products 1',
-      image: 'https://picsum.photos/500',
-      price: 1000,
-      slug: 'product-1',
-      content: '# 완전 멋진 물건이다',
-      maker: '경은문구사',
-    },
-    {
-      id: 1,
-      title: 'Products 1',
-      image: 'https://picsum.photos/500',
-      price: 1000,
-      slug: 'product-1',
-    },
-    {
-      id: 2,
-      title: 'Products 2',
-      image: 'https://picsum.photos/500',
-      price: 2000,
-      slug: 'product-2',
-    },
-    {
-      id: 3,
-      title: 'Products 3',
-      image: 'https://picsum.photos/500',
-      price: 3000,
-      slug: 'product-3',
-    },
-    {
-      id: 4,
-      title: 'Products 4',
-      image: 'https://picsum.photos/500',
-      price: 3000,
-      slug: 'product-3',
-    },
-    {
-      id: 5,
-      title: 'Products 5',
-      image: 'https://picsum.photos/500',
-      price: 7777,
-      slug: 'product-3',
-    },
-    {
-      id: 6,
-      title: 'Products 6',
-      image: 'https://picsum.photos/500',
-      price: 3000,
-      slug: 'product-3',
-    },
-    {
-      id: 7,
-      title: 'Products 7',
-      image: 'https://picsum.photos/500',
-      price: 3000,
-      slug: 'product-3',
-    },
-    {
-      id: 8,
-      title: 'Products 8',
-      image: 'https://picsum.photos/500',
-      price: 3000,
-      slug: 'product-3',
-    },
-    {
-      title: 'Products 9',
-      image: 'https://picsum.photos/500',
-      price: 2000,
-      slug: 'product-3',
-    },
-    {
-      id: 9,
-      title: 'Products 10',
-      image: 'https://picsum.photos/500',
-      price: 1000,
-      slug: 'product-3',
-    },
-  ];
-
-  return {
-    props: {
-      product: DUMMY_PRODUCT,
-    },
-  };
+  try {
+    const result = await axios.get(`http://localhost:3000/api/products`);
+    if (result.status === 200) {
+      return {
+        props: {
+          product: result.data,
+        },
+      };
+    } else {
+      return {
+        props: {
+          product: null,
+          error: {
+            statusCode: result.status,
+            title: `${result.statusText} - ${result.request.url}`,
+          },
+        },
+      };
+    }
+  } catch (err) {
+    const statusCode = err.response ? err.response.status : "에발발";
+    console.error(err.response);
+    return {
+      props: {
+        product: null,
+        error: {
+          statusCode,
+          title: err.response ? err.response.status : "에러발생",
+        },
+      },
+    };
+  }
 }
