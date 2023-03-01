@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ProductContent from "@/components/Products/ProductContent/productContent";
 import axios from "axios";
-import { ProductContentToCartButton } from "@/pages/products/products.styles";
+import {
+  ProductContentToCartButton,
+  StyledProductContainer,
+} from "@/pages/products/products.styles";
 
 export default function PostDetailPage(props) {
   const { product, error } = props;
@@ -27,7 +30,6 @@ export default function PostDetailPage(props) {
       ) : (
         <ul>
           <ProductContent {...product} />
-          <ProductContentToCartButton>ADD TO BAG</ProductContentToCartButton>
         </ul>
       )}
     </div>

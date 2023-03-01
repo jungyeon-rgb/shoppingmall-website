@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import { useRouter } from "next/router";
+import Image from "next/image";
 import {
   StyledProductAnchor,
   StyledProductContainer,
@@ -7,13 +7,13 @@ import {
   StyledProductPrice,
   StyledProductsContainer,
   StyledProductTitle,
-} from '@/pages/products/products.styles';
-import axios from 'axios';
-import {console} from 'next/dist/compiled/@edge-runtime/primitives/console';
+} from "@/pages/products/products.styles";
+import axios from "axios";
 
 export default function Products(props) {
+  const { product } = props;
+
   const router = useRouter();
-  const { products } = props;
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
@@ -22,8 +22,8 @@ export default function Products(props) {
 
   return (
     <StyledProductsContainer>
-      {products && products.length > 0 &&
-          products.map((product) => {
+      {product &&
+        product.map((product) => {
           // 상품 정보 렌더링
           return (
             <StyledProductAnchor
@@ -54,19 +54,22 @@ export default function Products(props) {
 }
 
 export async function getServerSideProps({ params }) {
-  
+  // API를 호출해서 상품 데이터를 가져오는 경우
+  // const res = await fetch("http://localhost:3000/api/products");
+  // const products = await res.json();
+
   try {
-    const result = await axios.get('http://localhost:3001/api/products');
+    const result = await axios.get(`http://localhost:3000/api/${params.id}}`);
     if (result.status === 200) {
       return {
         props: {
-          products: result.data,
+          product: result.data,
         },
       };
     } else {
       return {
         props: {
-          products: null,
+          product: null,
           error: {
             statusCode: result.status,
             title: `${result.statusText} - ${result.request.url}`,
@@ -75,15 +78,14 @@ export async function getServerSideProps({ params }) {
       };
     }
   } catch (err) {
-    console.error(err);
+    const statusCode = err.response ? err.response.status : "에러발생";
     console.error(err.response);
-    const statusCode = err.response ? err.response.status : '에발발';
     return {
       props: {
-        products: null,
+        product: null,
         error: {
           statusCode,
-          title: err.response ? err.response.status : '에러발생',
+          title: err.response ? err.response.status : "에러발생",
         },
       },
     };

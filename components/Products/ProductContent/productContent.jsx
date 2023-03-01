@@ -1,17 +1,31 @@
-import ReactMarkdown from 'react-markdown';
-import classes from './ProductContent.styles';
-import ProductHeader from '@/components/Products/ProductContent/ProductContentHeader/ProductContentHeader';
-import { ProductContentContainer } from '@/components/Products/ProductContent/ProductContent.styles';
-
+import ReactMarkdown from "react-markdown";
+import classes from "./ProductContent.styles";
+import ProductHeader from "@/components/Products/ProductContent/ProductContentHeader/ProductContentHeader";
+import {
+  ProductContentContainer,
+  ProductContentMain,
+  ProductContentToCartButton,
+  ProductContentCountInput,
+  ProductContentButtonContainer,
+} from "@/components/Products/ProductContent/ProductContent.styles";
+import Image from "next/image";
 export default function ProductContent(props) {
   const { id, maker, title, content, price, image } = props;
 
   return (
     <ProductContentContainer>
-      <ProductHeader title={title} image={image} />
-      <ReactMarkdown>{content}</ReactMarkdown>
-      <h3>{price}</h3>
-      <p>{maker}</p>
+      <Image src={image} alt="상품 이미지" width={500} height={500} />
+      <ProductContentMain>
+        <ProductHeader title={title} />
+        <p>{maker}</p>
+        <h3>{price}원</h3>
+
+        <ProductContentButtonContainer>
+          <ProductContentCountInput />
+          <ProductContentToCartButton>ADD TO BAG</ProductContentToCartButton>
+        </ProductContentButtonContainer>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </ProductContentMain>
     </ProductContentContainer>
   );
 }

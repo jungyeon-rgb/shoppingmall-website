@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import { useRouter } from "next/router";
+import Image from "next/image";
 import {
   StyledProductAnchor,
   StyledProductContainer,
@@ -7,9 +7,9 @@ import {
   StyledProductPrice,
   StyledProductsContainer,
   StyledProductTitle,
-} from '@/pages/products/products.styles';
-import axios from 'axios';
-import {console} from 'next/dist/compiled/@edge-runtime/primitives/console';
+} from "@/pages/products/products.styles";
+import axios from "axios";
+import { console } from "next/dist/compiled/@edge-runtime/primitives/console";
 
 export default function Products(props) {
   const { products } = props;
@@ -20,7 +20,7 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products?=category${targetUrl}`);
+    router.push(`/products/category?category=${targetUrl}`);
     // 체크하기
   };
 
@@ -30,33 +30,35 @@ export default function Products(props) {
 
   return (
     <StyledProductsContainer>
-      {products === null && <div>상품이 존재하지 않습니다. 잠시 후에 다시 요청해주세요. :)</div>}
-      {/*{filteredProduct &&*/}
-      {/*  filteredProduct.map((product) => {*/}
-      {/*    // 상품 정보 렌더링*/}
-      {/*    return (*/}
-      {/*      <StyledProductAnchor*/}
-      {/*        key={product.id}*/}
-      {/*        onClick={(e) => handleProductClick(e, product.slug)}*/}
-      {/*      >*/}
-      {/*        /!* 함수를 호출하여 상품의 'slug' 값으로 라우팅 *!/*/}
-      {/*        <StyledProductContainer>*/}
-      {/*          <Image*/}
-      {/*            src={product.image}*/}
-      {/*            alt="product-image"*/}
-      {/*            width={200}*/}
-      {/*            height={200}*/}
-      {/*          />*/}
-      {/*          <StyledProductInfo>*/}
-      {/*            <StyledProductTitle>{product.title}</StyledProductTitle>*/}
-      {/*            <StyledProductPrice>*/}
-      {/*              {product.price.toLocaleString()}*/}
-      {/*            </StyledProductPrice>*/}
-      {/*          </StyledProductInfo>*/}
-      {/*        </StyledProductContainer>*/}
-      {/*      </StyledProductAnchor>*/}
-      {/*    );*/}
-      {/*  })}*/}
+      {products === null && (
+        <div>상품이 존재하지 않습니다. 잠시 후에 다시 요청해주세요. :)</div>
+      )}
+      {products &&
+        products.length > 0 &&
+        products.map((product) => {
+          return (
+            <StyledProductAnchor
+              key={product.id}
+              onClick={(e) => handleProductClick(e, product.slug)}
+            >
+              <StyledProductContainer>
+                <Image
+                  src={product.image}
+                  alt="product-image"
+                  width={200}
+                  height={200}
+                />
+                */
+                <StyledProductInfo>
+                  <StyledProductTitle>{product.title}</StyledProductTitle>
+                  <StyledProductPrice>
+                    {product.price.toLocaleString()}
+                  </StyledProductPrice>
+                </StyledProductInfo>
+              </StyledProductContainer>
+            </StyledProductAnchor>
+          );
+        })}
     </StyledProductsContainer>
   );
 }
@@ -93,13 +95,13 @@ export async function getServerSideProps(context) {
   } catch (err) {
     console.error(err);
     console.error(err.response);
-    const statusCode = err.response ? err.response.status : '에러발생';
+    const statusCode = err.response ? err.response.status : "에러발생";
     return {
       props: {
         products: null,
         error: {
           statusCode,
-          title: err.response ? err.response.status : '에러발생',
+          title: err.response ? err.response.status : "에러발생",
         },
       },
     };

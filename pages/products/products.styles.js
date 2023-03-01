@@ -55,4 +55,6 @@ export const StyledProductPrice = styled.p`
   cursor: pointer;
 `;
 
+// [id].styles.js
+
 export const ProductContentToCartButton = styled.button``;
