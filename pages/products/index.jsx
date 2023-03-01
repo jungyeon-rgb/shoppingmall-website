@@ -60,7 +60,7 @@ export async function getServerSideProps({ params }) {
   //`${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products/${params.id}}`
 
   try {
-    console.log(error);
+    console.log(err);
     const result = await axios.get(
       `${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
     );

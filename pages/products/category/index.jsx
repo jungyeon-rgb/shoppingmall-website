@@ -48,7 +48,7 @@ export default function Products(props) {
                   width={600}
                   height={600}
                 />
-                */
+
                 <StyledProductInfo>
                   <StyledProductTitle>{product.title}</StyledProductTitle>
                   <StyledProductPrice>
