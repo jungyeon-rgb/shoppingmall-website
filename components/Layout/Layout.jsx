@@ -20,13 +20,13 @@ export default function Layout({ children }) {
               <Link href="/products">제품 전체</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products?=note">노트</Link>
+              <Link href="/products/category?category=note">노트</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products?=sticker">스티커</Link>
+              <Link href="/products/category?category=sticker">스티커</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products?=pencil">필기구</Link>
+              <Link href="/products/category?category=pencil">필기구</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
               <Link href="/my-page">장바구니</Link>
