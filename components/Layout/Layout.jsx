@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import Link from "next/link";
 import {
   LayoutHeaderLogoStyled,
   LayoutHeaderNavLiStyled,
   LayoutHeaderNavStyled,
   LayoutHeaderNavUlStyled,
   LayoutHeaderStyled,
-} from '@/components/Layout/Layout.styles';
+} from "@/components/Layout/Layout.styles";
 
 export default function Layout({ children }) {
   return (
@@ -17,16 +17,19 @@ export default function Layout({ children }) {
         <LayoutHeaderNavStyled>
           <LayoutHeaderNavUlStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/">홈</Link>
+              <Link href="/products">VIEW ALL</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products">문구</Link>
+              <Link href="/products/category?category=note">NOTES</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/">커뮤니티</Link>
+              <Link href="/products/category?category=sticker">STICKER</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/">마이페이지</Link>
+              <Link href="/products/category?category=pencil">WRITE</Link>
+            </LayoutHeaderNavLiStyled>
+            <LayoutHeaderNavLiStyled>
+              <Link href="/my-page">CART</Link>
             </LayoutHeaderNavLiStyled>
           </LayoutHeaderNavUlStyled>
         </LayoutHeaderNavStyled>

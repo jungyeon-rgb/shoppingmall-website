@@ -9,28 +9,38 @@ import {
   StyledProductTitle,
 } from "@/pages/products/products.styles";
 import axios from "axios";
+import { console } from "next/dist/compiled/@edge-runtime/primitives/console";
 
 export default function Products(props) {
-  const { product } = props;
-
+  const { products } = props;
   const router = useRouter();
+  // console.log(router.query);
+  // const { category } = router.query;
+  // console.log(category);
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/${targetUrl}`);
+    router.push(`/products/category?category=${targetUrl}`);
+    // 체크하기
   };
+
+  // const filteredProduct = categoryValue
+  //   ? product.filter((p) => p.category === categoryValue)
+  //   : product;
 
   return (
     <StyledProductsContainer>
-      {product &&
-        product.map((product) => {
-          // 상품 정보 렌더링
+      {products === null && (
+        <div>상품이 존재하지 않습니다. 잠시 후에 다시 요청해주세요. :)</div>
+      )}
+      {products &&
+        products.length > 0 &&
+        products.map((product) => {
           return (
             <StyledProductAnchor
               key={product.id}
               onClick={(e) => handleProductClick(e, product.slug)}
             >
-              {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
               <StyledProductContainer>
                 <Image
                   src={product.image}
@@ -38,9 +48,9 @@ export default function Products(props) {
                   width={200}
                   height={200}
                 />
+                */
                 <StyledProductInfo>
                   <StyledProductTitle>{product.title}</StyledProductTitle>
-                  {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
                   <StyledProductPrice>
                     {product.price.toLocaleString()}
                   </StyledProductPrice>
@@ -53,23 +63,28 @@ export default function Products(props) {
   );
 }
 
-export async function getServerSideProps({ params }) {
-  // API를 호출해서 상품 데이터를 가져오는 경우
-  // const res = await fetch("http://localhost:3000/api/products");
-  // const products = await res.json();
+export async function getServerSideProps(context) {
+  const { query } = context;
+  const categoryValue = query.category;
 
   try {
-    const result = await axios.get(`http://localhost:3000/api/${params.id}}`);
+    const result = await axios.get(
+      `http://localhost:3000/api/products?category=${categoryValue}`
+    );
+    console.log(result);
     if (result.status === 200) {
+      const filteredData = categoryValue
+        ? result.data.filter((p) => p.category === categoryValue)
+        : result.data;
       return {
         props: {
-          product: result.data,
+          products: filteredData,
         },
       };
     } else {
       return {
         props: {
-          product: null,
+          products: null,
           error: {
             statusCode: result.status,
             title: `${result.statusText} - ${result.request.url}`,
@@ -78,11 +93,12 @@ export async function getServerSideProps({ params }) {
       };
     }
   } catch (err) {
-    const statusCode = err.response ? err.response.status : "에러발생";
+    console.error(err);
     console.error(err.response);
+    const statusCode = err.response ? err.response.status : "에러발생";
     return {
       props: {
-        product: null,
+        products: null,
         error: {
           statusCode,
           title: err.response ? err.response.status : "에러발생",

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 // export const Button = styled.button`
 //   padding: 32px;
@@ -12,22 +12,51 @@ import styled from '@emotion/styled';
 //     color: white;
 //   }
 // `;
+// /*flex-direction: column;
 
-export const HomeProductContentStyled = styled.div`
+export const HomeProductEventCommentStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 100px auto;
+`;
 
-  margin: 60px auto;
-  height: 300px;
-  width: 85%;
+export const HomeProductContentStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 550px;
+  padding: 30px 0;
+  margin: 0 auto;
 
-  background-color: #f7da64;
+  background-image: url("/img/background-image.png");
+`;
 
-  font-size: 20px;
-  & > p {
-    margin: 5px auto;
+export const ImageContentColumnStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  > a {
+    padding: 12px 0;
+  }
+
+  > a:nth-of-type(odd) {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  > a:nth-of-type(even) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  img {
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
   }
 `;
 
@@ -58,5 +87,4 @@ export const HomeProductImageStyled = styled.img`
   background-color: #5fafd4;
   border-radius: 35% 35% 35% 0;
 `;
-
 // export const HomeProductTitleStyled = styled.img``

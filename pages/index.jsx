@@ -1,45 +1,74 @@
-import styles from '@/styles/Home.module.css'; // *.module.css | scss | sass
+import Link from "next/link";
+import Image from "next/image";
 import {
   HomeProductContentStyled,
   HomeProductImageDivStyled,
   HomeProductImageStyled,
   HomeToProductLinkStyled,
-} from '@/pages/index.styles';
-import Link from 'next/link';
+  ImageContentColumnStyled,
+  HomeProductEventCommentStyled,
+  ImageContentColumnItemStyled,
+} from "@/pages/index.styles";
+import SwiperComponent from "@/components/Swiper/Swiper";
 
-export default function Home() {
+export default function Index() {
   return (
     <>
-      <div className={styles.logInNav}>이경은님/로그아웃</div>
-      <a href="/order">주문페이지 바로가기</a>
+      <SwiperComponent />
+      <HomeProductEventCommentStyled>
+        <h2>새로운 학기가 시작되면 설레는 마음이 가득!</h2>
+        <p>
+          설레는 마음으로 준비한 문구로 채워진 일상, 더욱 멋지게 꾸며보아요!
+        </p>
+      </HomeProductEventCommentStyled>
+
       <HomeProductContentStyled>
-        <h4>3.3(금) ~ 3.10(금)</h4>
-        <h2>새로운 학기의 시작</h2>
-        <p>설레는 마음으로 새 학기를 준비하는 모든 이들을 위한 컬렉션.</p>
-        <p>사조몰 멤버들을 위한 최대 25% 할인 혜택을 지금 만나보세용가리</p>
-        <HomeToProductLinkStyled>
-          <Link href="/products">제품 구경하러 가기</Link>
-        </HomeToProductLinkStyled>
+        <ImageContentColumnStyled>
+          <Link href="/products">
+            <Image
+              src="/img/products/clock.png"
+              alt="시계"
+              width={200}
+              height={200}
+            />
+          </Link>
+
+          <Link href="/products">
+            <Image
+              src="/img/products/crayon.png"
+              alt="크레용"
+              width={250}
+              height={200}
+            />
+          </Link>
+
+          <Link href="/products">
+            <Image
+              src="/img/products/flim.png"
+              alt="필름"
+              width={200}
+              height={150}
+            />
+          </Link>
+          <Link href="/products">
+            <Image
+              src="/img/products/pencil.png"
+              alt="연필"
+              width={250}
+              height={100}
+            />
+          </Link>
+
+          <Link href="/products">
+            <Image
+              src="/img/products/postcard.png"
+              alt="엽서"
+              width={200}
+              height={200}
+            />
+          </Link>
+        </ImageContentColumnStyled>
       </HomeProductContentStyled>
-      <HomeProductImageDivStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-      </HomeProductImageDivStyled>
-      <HomeProductImageDivStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-      </HomeProductImageDivStyled>
-      <HomeProductImageDivStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-        <HomeProductImageStyled></HomeProductImageStyled>
-      </HomeProductImageDivStyled>
-      {/* next js는 기본 경로가 public */}
     </>
   );
 }
