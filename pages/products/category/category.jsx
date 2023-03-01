@@ -68,7 +68,7 @@ export async function getServerSideProps(context) {
 
   try {
     const result = await axios.get(
-      `http://localhost:3000/api/products?category=${query.id}`
+      `http://localhost:3000/api/products?category=${categoryValue}`
     );
     if (result.status === 200) {
       const filteredData = categoryValue

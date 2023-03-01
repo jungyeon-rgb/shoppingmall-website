@@ -18,7 +18,7 @@ export const HomeImageSlideStyled = styled.div`
   height: 300px;
   width: 90%;
   display: flex;
-  .swiper {
+  & > .swiper {
     align-items: center;
     justify-content: center;
   }
