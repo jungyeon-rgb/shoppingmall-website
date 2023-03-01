@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 // export const Button = styled.button`
 //   padding: 32px;
@@ -14,15 +14,6 @@ import styled from "@emotion/styled";
 // `;
 // /*flex-direction: column;
 
-export const HomeImageSlideStyled = styled.div`
-  height: 300px;
-  width: 90%;
-  display: flex;
-  & > .swiper {
-    align-items: center;
-    justify-content: center;
-  }
-`;
 export const HomeProductEventCommentStyled = styled.div`
   display: flex;
   flex-direction: column;

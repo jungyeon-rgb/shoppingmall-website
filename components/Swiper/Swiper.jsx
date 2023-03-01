@@ -1,34 +1,25 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "@/components/Layout/Swiper";
-
-import Image from "next/image";
-import Link from "next/link";
+import 'swiper/css/bundle';
 
 export default function SwiperComponent() {
   return (
     <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      direction={"horizontal"}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
       navigation
-      //      pagination={{ clickable: true }}
+      // pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       loop
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-      autoplay={{ delay: 2500, disableOnInteraction: false }}
+      autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
     >
       <SwiperSlide>
         <Link href="/products?category=pen">
-          <Image src="/img/swiper/pen.jpg" alt="펜" width={250} height={200} />
+          <Image src="/img/swiper/pen.jpg" alt="펜" fill  />
         </Link>
       </SwiperSlide>
       <SwiperSlide>
@@ -36,8 +27,7 @@ export default function SwiperComponent() {
           <Image
             src="/img/swiper/postcard.jpg"
             alt="엽서"
-            width={250}
-            height={200}
+            fill
           />
         </Link>
       </SwiperSlide>
@@ -46,8 +36,7 @@ export default function SwiperComponent() {
           <Image
             src="/img/swiper/sticker.jpg"
             alt="스티커"
-            width={250}
-            height={200}
+            fill
           />
         </Link>
       </SwiperSlide>
@@ -56,8 +45,7 @@ export default function SwiperComponent() {
           <Image
             src="/img/swiper/watch.jpg"
             alt="시계"
-            width={250}
-            height={200}
+            fill
           />
         </Link>
       </SwiperSlide>

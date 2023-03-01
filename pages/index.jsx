@@ -1,4 +1,5 @@
-import styles from "@/styles/Home.module.css"; // *.module.css | scss | sass
+import Link from 'next/link';
+import Image from 'next/image';
 import {
   HomeProductContentStyled,
   HomeProductImageDivStyled,
@@ -6,19 +7,13 @@ import {
   HomeToProductLinkStyled,
   ImageContentRowStyled,
   HomeProductEventCommentStyled,
-  HomeImageSlideStyled,
-} from "@/pages/index.styles";
-import Link from "next/link";
-import Image from "next/image";
-import SwiperComponent from "@/components/Layout/Swiper";
+} from '@/pages/index.styles';
+import SwiperComponent from '@/components/Swiper/Swiper';
 
-export default function Home() {
+export default function Index() {
   return (
     <>
-      <HomeImageSlideStyled>
-        <SwiperComponent className={styles.swiper} />
-      </HomeImageSlideStyled>
-
+      <SwiperComponent />
       <HomeProductEventCommentStyled>
         <h2>새로운 학기가 시작되면 설레는 마음이 가득!</h2>
         <p>
