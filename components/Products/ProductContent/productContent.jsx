@@ -10,21 +10,23 @@ import {
 } from "@/components/Products/ProductContent/ProductContent.styles";
 import Image from "next/image";
 export default function ProductContent(props) {
-  const { id, maker, title, content, price, image } = props;
-
+  const { id, company, title, content, price, image } = props;
   return (
     <ProductContentContainer>
       <Image src={image} alt="상품 이미지" width={500} height={500} />
       <ProductContentMain>
         <ProductHeader title={title} />
-        <p>{maker}</p>
+        <p>{company}</p>
         <h3>{price}원</h3>
+        <hr />
 
         <ProductContentButtonContainer>
           <ProductContentCountInput />
           <ProductContentToCartButton>ADD TO BAG</ProductContentToCartButton>
         </ProductContentButtonContainer>
-        <ReactMarkdown>{content}</ReactMarkdown>
+        <hr />
+        <h4>{content}</h4>
+        {/* <ReactMarkdown className="productmarkdown">{content}</ReactMarkdown> */}
       </ProductContentMain>
     </ProductContentContainer>
   );

@@ -17,7 +17,7 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/${targetUrl}`);
+    router.push(`${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`);
   };
 
   return (
@@ -57,13 +57,17 @@ export async function getServerSideProps({ params }) {
   // API를 호출해서 상품 데이터를 가져오는 경우
   // const res = await fetch("http://localhost:3000/api/products");
   // const products = await res.json();
+  //`${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products/${params.id}}`
 
   try {
-    const result = await axios.get(`http://localhost:3000/api/${params.id}}`);
+    const result = await axios.get(
+      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
+    );
+
     if (result.status === 200) {
       return {
         props: {
-          product: result.data,
+          product: result.data.data,
         },
       };
     } else {
@@ -78,8 +82,9 @@ export async function getServerSideProps({ params }) {
       };
     }
   } catch (err) {
-    const statusCode = err.response ? err.response.status : "에러발생";
     console.error(err.response);
+    const statusCode = err.response ? err.response.status : "에러발생";
+
     return {
       props: {
         product: null,
