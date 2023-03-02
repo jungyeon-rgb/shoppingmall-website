@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function myPage() {
   return (
     <>
-      <main className={styles.backgroun}>
+      <main className={styles.background}>
         <aside>
           <div className={styles.myPageMenu}>
             <div className={styles.cart}>
