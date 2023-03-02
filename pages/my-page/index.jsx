@@ -47,7 +47,7 @@ export default function myPage() {
                                 </div>
                             </li>
                             <li>
-                                <div className={styles.productPrice}>12,456 원</div>
+                                <div className={styles.productPrice}>3,000 원</div>
                             </li>
                             <li>
                                 <button className={styles.productDel}>삭제</button>
@@ -56,8 +56,15 @@ export default function myPage() {
                     </div>
                 </div>
                 <div className={styles.finOrder}>
-                    <div className={styles.totalProduct}>5개</div>
-                    <div className={styles.totalPrice}>52,555원</div>
+                    <div className={styles.totalProduct}>
+                        <div className={styles.toPro1}>총</div>
+                        <div className={styles.toPro2}>1개</div>
+                    </div>
+                    <div className={styles.totalPrice}>
+                    <div className={styles.toPri1}>최종금액</div>
+                    <div className={styles.toPri2}>3,000 원</div>
+
+                    </div>
                     <div className={styles.totalOrder}>
                         <TotalPrice />
                     </div>
