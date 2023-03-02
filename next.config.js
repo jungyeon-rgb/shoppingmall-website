@@ -5,8 +5,8 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ['picsum.photos']
-  }
+    domains: ["picsum.photos", "ssl.pstatic.net", "localhost"],
+  },
 };
 
 module.exports = nextConfig;

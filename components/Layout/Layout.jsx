@@ -20,16 +20,20 @@ export default function Layout({ children }) {
               <Link href="/products">VIEW ALL</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products/category?category=note">NOTES</Link>
+              <Link href="/products?category=note">NOTES</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products/category?category=sticker">STICKER</Link>
+              <Link href="/products?category=sticker">STICKER</Link>
             </LayoutHeaderNavLiStyled>
             <LayoutHeaderNavLiStyled>
-              <Link href="/products/category?category=write">WRITE</Link>
+              <Link href="/products?category=write">WRITE</Link>
             </LayoutHeaderNavLiStyled>
+
             <LayoutHeaderNavLiStyled>
               <Link href="/my-page">CART</Link>
+            </LayoutHeaderNavLiStyled>
+            <LayoutHeaderNavLiStyled>
+              <Link href="/order">ORDER</Link>
             </LayoutHeaderNavLiStyled>
           </LayoutHeaderNavUlStyled>
         </LayoutHeaderNavStyled>

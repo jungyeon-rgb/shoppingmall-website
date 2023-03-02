@@ -24,7 +24,7 @@ export default function Index() {
 
       <HomeProductContentStyled>
         <ImageContentColumnStyled>
-          <Link href="/products">
+          <Link href="/products?category=watch">
             <Image
               src="/img/products/clock.png"
               alt="시계"
@@ -33,7 +33,7 @@ export default function Index() {
             />
           </Link>
 
-          <Link href="/products">
+          <Link href="/products?category=write">
             <Image
               src="/img/products/crayon.png"
               alt="크레용"
@@ -42,7 +42,7 @@ export default function Index() {
             />
           </Link>
 
-          <Link href="/products">
+          <Link href="/products?category=film">
             <Image
               src="/img/products/flim.png"
               alt="필름"
@@ -50,7 +50,7 @@ export default function Index() {
               height={150}
             />
           </Link>
-          <Link href="/products">
+          <Link href="/products?category=pencil">
             <Image
               src="/img/products/pencil.png"
               alt="연필"

@@ -1,6 +1,9 @@
 import styles from '@/styles/myPage.module.css';
 import Link from 'next/link';
 import React from 'react';
+import Counter from '@/components/events/Counter';
+import Checkbox from '@/components/forms/Checkbox';
+import TotalPrice from '@/components/events/TotalPrice';
 
 export default function myPage() {
     return (<>
@@ -27,9 +30,12 @@ export default function myPage() {
             <article>
                 <div className={styles.myOrderList}>
                     <div className={styles.myOrder}>
+                        <div className={styles.checkbox}>
+                            <Checkbox />
+                        </div>
                         <div>
-                            <a href='/'><img className={styles.productImg} src='/img/order/1.jpg'
-                                             alt='itemSideImg'/></a>
+                            <a href='/'><img className={styles.productImg} 
+                            src='/img/order/1.jpg' alt='itemSideImg'/></a>
                         </div>
                         <ul className={styles.orderList}>
                             <li>
@@ -37,9 +43,7 @@ export default function myPage() {
                             </li>
                             <li>
                                 <div className={styles.productEa}>
-                                    <button className={styles.itemAdd}>+</button>
-                                    <div className={styles.itemCount}>0</div>
-                                    <button className={styles.itemSub}>-</button>
+                                <Counter/>
                                 </div>
                             </li>
                             <li>
@@ -55,29 +59,21 @@ export default function myPage() {
                     <div className={styles.totalProduct}>5개</div>
                     <div className={styles.totalPrice}>52,555원</div>
                     <div className={styles.totalOrder}>
-                        <button>주문하기</button>
+                        <TotalPrice />
                     </div>
                 </div>
-                <Counter/>
             </article>
         </main>
 
     </>);
 }
 
-function Counter({value = 1}) {
-    const [count, setCount] = React.useState(value);
 
-    const handleIncreaseClick = () => {
-        setCount(count + 1);
-    };
-    const handleDecreaseClick = () => {
-        if (count - 1 > 0) setCount(count - 1);
-    };
-
-    return <>
-        <button onClick={handleIncreaseClick}>+</button>
-        {count}
-        <button onClick={handleDecreaseClick}>-</button>
-    </>;
-}
+  function Remove(){
+    return (
+        // https://velog.io/@ewon20/1-5-React-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0
+        <>
+        <button>삭제</button>
+        </>
+    )
+  }

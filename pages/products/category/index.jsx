@@ -20,7 +20,9 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/category?category=${targetUrl}`);
+    router.push(
+      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products?category=${targetUrl}`
+    );
     // 체크하기
   };
 
@@ -45,10 +47,10 @@ export default function Products(props) {
                 <Image
                   src={product.image}
                   alt="product-image"
-                  width={200}
-                  height={200}
+                  width={600}
+                  height={600}
                 />
-                */
+
                 <StyledProductInfo>
                   <StyledProductTitle>{product.title}</StyledProductTitle>
                   <StyledProductPrice>
@@ -69,7 +71,7 @@ export async function getServerSideProps(context) {
 
   try {
     const result = await axios.get(
-      `http://localhost:3000/api/products?category=${categoryValue}`
+      `${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products?category=${categoryValue}`
     );
     console.log(result);
     if (result.status === 200) {

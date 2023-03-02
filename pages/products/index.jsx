@@ -17,7 +17,9 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/${targetUrl}`);
+    router.push(
+      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/products/${targetUrl}`
+    );
   };
 
   return (
@@ -31,18 +33,19 @@ export default function Products(props) {
               onClick={(e) => handleProductClick(e, product.slug)}
             >
               {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
+              {/*               onClick={(e) => handleProductClick(e, product.slug)} */}
               <StyledProductContainer>
                 <Image
-                  src={product.image}
-                  alt="product-image"
+                  src={`${process.env.NEXT_PUBLIC_FETCH_BASEURL}/static/${product.image}`}
+                  alt={`${product.image}`}
                   width={200}
                   height={200}
                 />
                 <StyledProductInfo>
-                  <StyledProductTitle>{product.title}</StyledProductTitle>
+                  <StyledProductTitle>{`${product.name}`}</StyledProductTitle>
                   {/* 렌더링하려면 `/${product.id}`이런 식으로 수정해야하나요? */}
                   <StyledProductPrice>
-                    {product.price.toLocaleString()}
+                    {`${product.price.toLocaleString()}`}
                   </StyledProductPrice>
                 </StyledProductInfo>
               </StyledProductContainer>
@@ -57,13 +60,17 @@ export async function getServerSideProps({ params }) {
   // API를 호출해서 상품 데이터를 가져오는 경우
   // const res = await fetch("http://localhost:3000/api/products");
   // const products = await res.json();
+  //`${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products/${params.id}}`
 
   try {
-    const result = await axios.get(`http://localhost:3000/api/${params.id}}`);
+    const result = await axios.get(
+      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
+    );
+
     if (result.status === 200) {
       return {
         props: {
-          product: result.data,
+          product: result.data.data,
         },
       };
     } else {
@@ -78,8 +85,9 @@ export async function getServerSideProps({ params }) {
       };
     }
   } catch (err) {
-    const statusCode = err.response ? err.response.status : "에러발생";
     console.error(err.response);
+    const statusCode = err.response ? err.response.status : "에러발생";
+
     return {
       props: {
         product: null,
