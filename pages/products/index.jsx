@@ -15,10 +15,10 @@ export default function Products(props) {
 
   const router = useRouter();
 
-  const handleProductClick = (e, targetUrl) => {
+  const handleProductClick = (e, index) => {
     e.preventDefault();
     router.push(
-      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/products/${targetUrl}`
+      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/products/${index}`
     );
   };
 
@@ -29,8 +29,8 @@ export default function Products(props) {
           // 상품 정보 렌더링
           return (
             <StyledProductAnchor
-              key={product.id}
-              onClick={(e) => handleProductClick(e, product.slug)}
+              key={product._id}
+              onClick={(e) => handleProductClick(e, product._id)}
             >
               {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
               <StyledProductContainer>

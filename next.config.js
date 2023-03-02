@@ -5,7 +5,7 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ["picsum.photos", "ssl.pstatic.net", "localhost"],
+    domains: ["picsum.photos", "ssl.pstatic.net", "localhost", "34.64.47.53"],
   },
   eslint: {
     ignoreDuringBuilds: true,

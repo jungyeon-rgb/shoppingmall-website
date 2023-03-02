@@ -22,14 +22,13 @@ export default function PostDetailPage(props) {
         Error {error.statusCode} {error.statusText}
       </div>
     );
-
   return (
     <div>
       {isLoading ? (
         <p>미아내요 조굼만 더 기다려줘유</p>
       ) : (
         <ul>
-          <ProductContent {...product} />
+          <ProductContent {...product?.data} />
         </ul>
       )}
     </div>
