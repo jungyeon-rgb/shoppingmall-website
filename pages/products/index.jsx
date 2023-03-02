@@ -17,7 +17,7 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/${targetUrl}`);
+    router.push(`http://localhost:3000/products/${targetUrl}`);
   };
 
   return (
@@ -59,7 +59,7 @@ export async function getServerSideProps({ params }) {
   // const products = await res.json();
 
   try {
-    const result = await axios.get(`http://localhost:3000/api/${params.id}}`);
+    const result = await axios.get("http://localhost:3000/api/products");
     if (result.status === 200) {
       return {
         props: {
