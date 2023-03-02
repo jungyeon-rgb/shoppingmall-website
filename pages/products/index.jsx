@@ -33,8 +33,9 @@ export default function Products(props) {
               onClick={(e) => handleProductClick(e, product.slug)}
             >
               {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
+              {/*               onClick={(e) => handleProductClick(e, product.slug)} */}
               <StyledProductContainer>
-                <img
+                <Image
                   src={`${process.env.NEXT_PUBLIC_FETCH_BASEURL}/static/${product.image}`}
                   alt={`${product.image}`}
                   width={200}
