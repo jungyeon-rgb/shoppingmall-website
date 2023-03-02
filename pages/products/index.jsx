@@ -33,7 +33,6 @@ export default function Products(props) {
               onClick={(e) => handleProductClick(e, product.slug)}
             >
               {/* 함수를 호출하여 상품의 'slug' 값으로 라우팅 */}
-              {/*               onClick={(e) => handleProductClick(e, product.slug)} */}
               <StyledProductContainer>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_FETCH_BASEURL}/static/${product.image}`}
@@ -61,12 +60,10 @@ export async function getServerSideProps({ params }) {
   // const res = await fetch("http://localhost:3000/api/products");
   // const products = await res.json();
   //`${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products/${params.id}}`
-
   try {
     const result = await axios.get(
       `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
     );
-
     if (result.status === 200) {
       return {
         props: {
@@ -87,7 +84,7 @@ export async function getServerSideProps({ params }) {
   } catch (err) {
     console.error(err.response);
     const statusCode = err.response ? err.response.status : "에러발생";
-
+    console.error(err.response);
     return {
       props: {
         product: null,
