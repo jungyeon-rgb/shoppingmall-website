@@ -27,14 +27,14 @@ export default function SwiperComponent() {
       autoplay={{ delay: 2500, disableOnInteraction: false }}
     >
       <SwiperSlide>
-        <Link href="/products/category?category=pen">
-          <Image src="/img/swiper/pen.jpg" alt="펜" width={250} height={200} />
+        <Link href="/products?category=pen">
+          <Image src="/img/swiper/pen.png" alt="펜" width={250} height={200} />
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products/category?category=postcard">
+        <Link href="/products?category=postcard">
           <Image
-            src="/img/swiper/postcard.jpg"
+            src="/img/swiper/postcard.png"
             alt="엽서"
             width={250}
             height={200}
@@ -42,9 +42,9 @@ export default function SwiperComponent() {
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products/category?category=sticker">
+        <Link href="/products?category=sticker">
           <Image
-            src="/img/swiper/sticker.jpg"
+            src="/img/swiper/sticker.png"
             alt="스티커"
             width={250}
             height={200}
@@ -52,10 +52,20 @@ export default function SwiperComponent() {
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products/category?category=watch">
+        <Link href="/products?category=watch">
           <Image
-            src="/img/swiper/watch.jpg"
-            alt="시계"
+            src="/img/swiper/notes.png"
+            alt="노트"
+            width={250}
+            height={200}
+          />
+        </Link>
+      </SwiperSlide>
+      <SwiperSlide>
+        <Link href="/products?category=watch">
+          <Image
+            src="/img/swipe/write.png"
+            alt="필기구"
             width={250}
             height={200}
           />
