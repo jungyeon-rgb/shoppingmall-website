@@ -17,7 +17,7 @@ export default function Products(props) {
 
   const handleProductClick = (e, targetUrl) => {
     e.preventDefault();
-    router.push(`/products/${targetUrl}`);
+    router.push(`${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`);
   };
 
   return (
@@ -60,9 +60,8 @@ export async function getServerSideProps({ params }) {
   //`${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products/${params.id}}`
 
   try {
-    console.log(err);
     const result = await axios.get(
-      `${NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
+      `${process.env.NEXT_PUBLIC_FETCH_BASEURL}/api/v1/products`
     );
 
     if (result.status === 200) {
@@ -83,8 +82,9 @@ export async function getServerSideProps({ params }) {
       };
     }
   } catch (err) {
-    const statusCode = err.response ? err.response.status : "에러발생";
     console.error(err.response);
+    const statusCode = err.response ? err.response.status : "에러발생";
+
     return {
       props: {
         product: null,
