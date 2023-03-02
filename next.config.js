@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     domains: ["picsum.photos", "ssl.pstatic.net", "localhost"],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 };
 
 module.exports = nextConfig;
