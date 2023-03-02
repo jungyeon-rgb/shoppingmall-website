@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const LayoutHeaderStyled = styled.header``;
 
@@ -51,3 +51,5 @@ export const LayoutHeaderNavLiStyled = styled.li`
     color: #000000;
   }
 `;
+
+export const LayoutHeaderLoginLiStyled = styled.li``;
