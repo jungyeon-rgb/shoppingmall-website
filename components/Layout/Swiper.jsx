@@ -52,7 +52,7 @@ export default function SwiperComponent() {
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products?category=watch">
+        <Link href="/products?category=notes">
           <Image
             src="/img/swiper/notes.png"
             alt="노트"
@@ -62,9 +62,9 @@ export default function SwiperComponent() {
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/products?category=watch">
+        <Link href="/products?category=write">
           <Image
-            src="/img/swipe/write.png"
+            src="/img/swiper/write.png"
             alt="필기구"
             width={250}
             height={200}
