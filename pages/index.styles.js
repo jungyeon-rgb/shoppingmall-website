@@ -30,8 +30,6 @@ export const HomeProductContentStyled = styled.div`
   max-width: 550px;
   padding: 30px 0;
   margin: 0 auto;
-
-  background-image: url("/img/background-image.png");
 `;
 
 export const ImageContentColumnStyled = styled.div`
