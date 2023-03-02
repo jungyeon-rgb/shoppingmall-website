@@ -1,3 +1,3 @@
-export default function TotalPrice(){
-    <>오... 모르겠는걸</>
+export default function TotalPrice() {
+  return <>오... 모르겠는걸</>;
 }
