@@ -28,8 +28,12 @@ export default function Layout({ children }) {
             <LayoutHeaderNavLiStyled>
               <Link href="/products?category=write">WRITE</Link>
             </LayoutHeaderNavLiStyled>
+
             <LayoutHeaderNavLiStyled>
               <Link href="/my-page">CART</Link>
+            </LayoutHeaderNavLiStyled>
+            <LayoutHeaderNavLiStyled>
+              <Link href="/order">ORDER</Link>
             </LayoutHeaderNavLiStyled>
           </LayoutHeaderNavUlStyled>
         </LayoutHeaderNavStyled>
