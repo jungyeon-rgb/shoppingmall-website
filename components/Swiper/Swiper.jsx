@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import penImage from '../../public/img/swiper/pen.png';
 import postcardImage from '../../public/img/swiper/postcard.png';
 import stickerImage from '../../public/img/swiper/sticker.png';
 import writeImage from '../../public/img/swiper/write.png';
 
-import "swiper/css/bundle";
+import 'swiper/css/bundle';
 
 export default function SwiperComponent() {
   return (

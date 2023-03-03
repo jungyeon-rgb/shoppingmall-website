@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const ProductContentContainer = styled.div`
   display: flex;
@@ -30,7 +30,6 @@ export const ProductContentMain = styled.div`
 & hr {
     border: 1px dashed #000000;
 }
-  }
 `;
 export const ProductContentButtonContainer = styled.div`
   display: flex;
